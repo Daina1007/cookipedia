@@ -69,7 +69,8 @@ class Comment(TimeStampedModel):
     comment_user = models.OneToOneField(
         "user.User", on_delete=models.CASCADE, default='')
     comment = models.TextField()
-    comment_food = models.ForeignKey("Food", on_delete=models.CASCADE)
+    comment_food = models.ForeignKey(
+        "Food", on_delete=models.CASCADE, default='')
 
 
 class Like(models.Model):
